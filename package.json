@@ -5,9 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start":"node backend/index.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+    "start": "cd ./backend/ && npm install && node server.js",
+    "heroku-postbuild": "cd ./frontend/ && npm install && npm run build",
+    "backend": "cd ./backend/ && nodemon server.js ",
+    "frontend": "cd ./frontend/ && yarn run start",
+    "test":"cd ./frontend/ && npm run test"
   },
   "keywords": [],
   "author": "",
